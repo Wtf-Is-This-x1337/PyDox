@@ -44,12 +44,12 @@ def goback():
 
 def help():
 	logo()
-	print(f'''{ngreen}Help -\n{green}''')
+	print(f'''{ngreen}Help [-h] -\n\n{green}''')
 	goback()
 
 def github():
 	logo()
-	print(f'''{ngreen}Github -\n{green}My Github profile: https://github.com/Wtf-Is-This-x1337''')
+	print(f'''{ngreen}Github -\n\n{green}My Github profile: https://github.com/Wtf-Is-This-x1337''')
 	print('Project repository: https://github.com/Wtf-Is-This-x1337/PyDox')
 	print('[!] Code Improvements/Suggestions are welcome\n[!] Open an issue in Github for suggestions/issues')
 	goback()
@@ -96,12 +96,26 @@ def address():
 
 def tools():
     logo()
-    print(f'''{ngreen}Dox using a username - \n\n{green}''')
+    print(f'''{ngreen}Tools - \n\n{green}''')
     goback()
 
 def createList():
     logo()
-    print(f'''{ngreen}Create a list with all the informations - \n\n{green}''')
+    print(f'''\n{ngreen}Create a list with all the informations - \n{green}''')
+    listrealname = input('Real name: ')
+    listusername = input('Username: ')
+    listphone = input('Phone number: ')
+    listcountry = input('Country: ')
+    listcity = input('City: ')
+    listaddress = input('Address: ')
+    listip = input('IP address: ')
+    listother = input('Other informations (separate by comma): ')
+    # open list.txt for writing and create it if it doesn't exist 
+    List = open("list.txt", "a+")
+    List.write("List - \nReal name: " + listrealname + "\nUsername: " + listusername + "\nPhone number: " + listphone + "\nCountry: " + listcountry + "\nCity: " + listcity + "\nAddress: " + listaddress + "\nIP Address" + listip + "\nOther info - \n" + listother)
+    List.close # close the file when done
+    print('Done! File created at ./list.txt')
+    goback()
 
 def main():
 	logo()
