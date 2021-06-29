@@ -16,7 +16,8 @@ def clear():
 		os.system('clear')
 
 def logo():
-	print(f'''
+    clear()
+    print(f'''
 	{ngreen} ██▓███ ▓██   ██▓▓█████▄  ▒█████  ▒██   ██▒
 	▓██░  ██▒▒██  ██▒▒██▀ ██▌▒██▒  ██▒▒▒ █ █ ▒░
 	▓██░ ██▓▒ ▒██ ██░░██   █▌▒██░  ██▒░░  █   ░
@@ -42,49 +43,50 @@ def goback():
 		sys.exit('Invalid Input, ' + keyinput + " isn't defined" )
 
 def help():
-	clear()
 	logo()
-	print(f'''{ngreen}Help:\n{green}''')
+	print(f'''{ngreen}Help -\n{green}''')
 	goback()
 
 def github():
-	clear()
 	logo()
-	print(f'''{ngreen}Github:\n{green}My Github profile: https://github.com/Wtf-Is-This-x1337''')
+	print(f'''{ngreen}Github -\n{green}My Github profile: https://github.com/Wtf-Is-This-x1337''')
 	print('Project repository: https://github.com/Wtf-Is-This-x1337/PyDox')
-	print('!!\nCode Improvements/Suggestions are welcome\nOpen an issue in Github for suggestions/issues')
+	print('[!] Code Improvements/Suggestions are welcome\n[!] Open an issue in Github for suggestions/issues')
 	goback()
 
 def credits():
-	clear()
 	logo()
-	print(f'''{ngreen}Credits:\n{green}[+] Creator - WtfIsThis\n-----------------------\nI stole code from:\n[+] Garuda - coder: Cryptonian007\n\tHis github: https://github.com/Cryptonian007/\n[+] Sherlock project - coder: Siddharth Dushantha\n\tHis github: https://github.com/sdushantha''')
+	print(f'''{ngreen}Credits -\n\n{green}[+] Creator - WtfIsThis\n-----------------------\nI stole code from:\n[+] Garuda - coder: Cryptonian007\n\tHis github: https://github.com/Cryptonian007/\n[+] Sherlock project - coder: Siddharth Dushantha\n\tHis github: https://github.com/sdushantha''')
 	goback()
 
 def settings():
-	clear()
 	logo()
-	print(f'''{ngreen}Settings:\n{green}''')
+	print(f'''{ngreen}Settings -\n\n{green}''')
 	goback()
 
 def SetApi():
-	clear()
 	logo()
-	print(f'''{ngreen}Set API Keys:\n{green}''')
+	print(f'''{ngreen}Set API Keys -\n\n{green}''')
 	goback()
 
 def AutoDox():
-	clear()
 	logo()
-	print(f'''{ngreen}Informations:\n{green}''')
+	print(f'''{ngreen}Informations -\n\n{green}''')
 	goback()
 
+def RealName():
+    logo()
+    print(f'''{ngreen} Dox using a name -\n\n{green}''')
+    goback()
+
 def main():
-	clear()
 	logo()
 	select = input(f'''{green}\nSelect:
 	1) {ngreen}Help\t\t{green}2) {ngreen}Github\t  {green}3) {ngreen}Credits\n
-	{green}4) {ngreen}Settings\t{green}5) {ngreen}Set API keys\t  {green}6) {ngreen}Auto Dox
+	{green}4) {ngreen}Settings\t{green}5) {ngreen}Set API keys\t  {green}6) {ngreen}Auto Dox\n
+    {green}\t7) {ngreen}RealName\t{green}8) {ngreen}Username\t  {green}9) {ngreen}Phone\n
+    {green}\t10) {ngreen}Address\t{green}11) {ngreen}Tools\t  {green}12) {ngreen}Create list\n
+                        {green}13) {ngreen}Quit
 	\n{green}Option: ''')
 
 	# full spaghetti
