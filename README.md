@@ -1,4 +1,4 @@
-# PyDox
+# PyDox v0.1
 A Sophisticated Doxing Tool
 ## Info
 soon
