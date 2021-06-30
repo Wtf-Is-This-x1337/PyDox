@@ -17,10 +17,12 @@ A Sophisticated Doxing Tool
 | [python](https://www.python.org/) | 3.+ |
 | [colorama](https://pypi.org/project/colorama/) | 0.4.4 |
 | [anonfile](https://pypi.org/project/anonfile/) | 0.2.4 |
-| more soon | 0.1 |
+
 ## Images
 soon
+
 ## Features
 soon
+
 ## Warning ⚠️
 ***This tool is solely for educational purposes. Developer will not be reponsible for any misuse of the tool***
