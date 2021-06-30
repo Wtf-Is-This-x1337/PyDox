@@ -1,6 +1,6 @@
 # PyDox v0.1
 A Sophisticated Doxing Tool
-## Info
+## Details
 | Name | Details |
 | ------ | ------ |
 | Project Name | PyDox |
@@ -11,7 +11,11 @@ A Sophisticated Doxing Tool
 | Version | 0.1 |
 | License | The Unlicense |
 
-
+## Requirements
+| Name | Version |
+| ------ | ------ |
+| colorama | PyDox |
+| more soon | 100 |
 ## Images
 soon
 ## Features
