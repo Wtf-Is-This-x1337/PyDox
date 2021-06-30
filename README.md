@@ -3,10 +3,10 @@ A Sophisticated Doxing Tool
 ## Details
 | Name | Details |
 | ------ | ------ |
-| Project Name | PyDox |
-| Project Author | WtfIsThis |
+| Project Name | [PyDox](https://github.com/Wtf-Is-This-x1337/PyDox/) |
+| Project Author | [WtfIsThis](https://github.com/Wtf-Is-This-x1337) |
 | Project Timeline | 2021 - 2022 |
-| Programming Language | python |
+| Programming Language | [python](https://www.python.org/) |
 | OS | Windows/Linux |
 | Version | 0.1 |
 | License | The Unlicense |
@@ -14,6 +14,7 @@ A Sophisticated Doxing Tool
 ## Requirements
 | Name | Version |
 | ------ | ------ |
+| [python](https://www.python.org/) | 3.+ |
 | [colorama](https://pypi.org/project/colorama/) | 0.4.4 |
 | [anonfile](https://pypi.org/project/anonfile/) | 0.2.4 |
 | more soon | 0.1 |
