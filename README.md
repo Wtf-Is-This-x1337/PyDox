@@ -14,8 +14,9 @@ A Sophisticated Doxing Tool
 ## Requirements
 | Name | Version |
 | ------ | ------ |
-| colorama | 0.4.4 |
-| more soon | 100 |
+| [colorama](https://pypi.org/project/colorama/) | 0.4.4 |
+| [anonfile](https://pypi.org/project/anonfile/) | 0.2.4 |
+| more soon | 0.1 |
 ## Images
 soon
 ## Features
