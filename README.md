@@ -14,7 +14,7 @@ A Sophisticated Doxing Tool
 ## Requirements
 | Name | Version |
 | ------ | ------ |
-| colorama | PyDox |
+| colorama | 0.4.4 |
 | more soon | 100 |
 ## Images
 soon
