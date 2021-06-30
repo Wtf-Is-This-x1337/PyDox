@@ -1,4 +1,5 @@
 from colorama import Fore, Style, init
+from anonfile import AnonFile
 import os
 import sys
 
@@ -7,6 +8,9 @@ br = Style.BRIGHT
 green = br + Fore.GREEN
 white = br + Fore.WHITE
 ngreen = br + Fore.BLACK
+
+# Upload
+anon = AnonFile()
 
 # Functions
 def clear():
@@ -56,7 +60,7 @@ def github():
 
 def credits():
 	logo()
-	print(f'''{ngreen}Credits -\n\n{green}[+] Creator - WtfIsThis\n-----------------------\nI stole code from:\n[+] Garuda - coder: Cryptonian007\n\tHis github: https://github.com/Cryptonian007/\n[+] Sherlock project - coder: Siddharth Dushantha\n\tHis github: https://github.com/sdushantha''')
+	print(f'''{ngreen}Credits -\n\n{green}[+] Creator - WtfIsThis\n-----------------------\nI stole code from:\n[+] Garuda - coder: Cryptonian007\n\tHis github: https://github.com/Cryptonian007\n[+] Sherlock project - coder: Siddharth Dushantha\n\tHis github: https://github.com/sdushantha\n[+] Anonfiles Unofficial Python API - coder: nstrydom2\n\tHis github: https://github.com/nstrydom2''')
 	goback()
 
 def settings():
@@ -102,8 +106,10 @@ def tools():
 def createList():
     logo()
     print(f'''\n{ngreen}Create a list with all the informations - \n{green}''')
+    # ! "do u want to delete the last file created"
     listrealname = input('Real name: ')
     listusername = input('Username: ')
+    listage = input('Age: ')
     listphone = input('Phone number: ')
     listcountry = input('Country: ')
     listcity = input('City: ')
@@ -112,9 +118,18 @@ def createList():
     listother = input('Other informations (separate by comma): ')
     # open list.txt for writing and create it if it doesn't exist 
     List = open("list.txt", "a+")
-    List.write("List - \nReal name: " + listrealname + "\nUsername: " + listusername + "\nPhone number: " + listphone + "\nCountry: " + listcountry + "\nCity: " + listcity + "\nAddress: " + listaddress + "\nIP Address" + listip + "\nOther info - \n" + listother)
+    List.write("List - \nReal name: " + listrealname + "\nUsername: " + listusername + "\nAge: " + listage + "\nPhone number: " + listphone + "\nCountry: " + listcountry + "\nCity: " + listcity + "\nAddress: " + listaddress + "\nIP Address: " + listip + "\nOther info - \n" + listother)
     List.close # close the file when done
     print('Done! File created at ./list.txt')
+    # upload
+    print(f'''\n{ngreen}Do you want to upload the file online? [y/n]{green}''')
+    qupload = input('[>] ')
+    if qupload == 'y':
+    	option = input(f'''\n{ngreen}Choose an option:\n{green}[1] Pastebin (next update | requires Api Key)\n[2] Anonfiles\n[3] More soon\n\n[>] ''')
+    	if option == '2': # upload on anonfiles
+    		# upload the file and enable progressbar terminal feedback
+    		upload = anon.upload('./list.txt', progressbar=True)
+    		print('List.txt was uploaded at: ' + upload.url.geturl() + "\n")
     goback()
 
 def main():
