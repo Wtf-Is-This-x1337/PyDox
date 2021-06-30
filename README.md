@@ -18,6 +18,7 @@ A Sophisticated Doxing Tool
 | [colorama](https://pypi.org/project/colorama/) | 0.4.4 |
 | [anonfile](https://pypi.org/project/anonfile/) | 0.2.4 |
 | [shodan](https://pypi.org/project/shodan/) | 1.25.0 |
+| [googlesearch](https://pypi.org/project/googlesearch-python/) | 1.0.1 |
 
 ## Images
 soon
