@@ -7,7 +7,7 @@ A Sophisticated Doxing Tool
 | Project Author | WtfIsThis |
 | Project Timeline | 2021 - 2022 |
 | Programming Language | python |
-| Platform | Windows/Linux |
+| OS | Windows/Linux |
 | Version | 0.1 |
 | License | The Unlicense |
 
