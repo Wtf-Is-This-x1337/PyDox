@@ -2,12 +2,13 @@ from colorama import Fore, Style, init
 from anonfile import AnonFile
 import os
 import sys
+from DoxLib import gsearch
 
-# Colors
+# Colors + style implementation
 br = Style.BRIGHT
-green = br + Fore.GREEN
+seccolor = br + Fore.GREEN
+primcolor = br + Fore.BLACK
 white = br + Fore.WHITE
-ngreen = br + Fore.BLACK
 
 # Upload
 anon = AnonFile()
@@ -22,7 +23,7 @@ def clear():
 def logo():
     clear()
     print(f'''
-	{ngreen} ██▓███ ▓██   ██▓▓█████▄  ▒█████  ▒██   ██▒
+	{primcolor} ██▓███ ▓██   ██▓▓█████▄  ▒█████  ▒██   ██▒
 	▓██░  ██▒▒██  ██▒▒██▀ ██▌▒██▒  ██▒▒▒ █ █ ▒░
 	▓██░ ██▓▒ ▒██ ██░░██   █▌▒██░  ██▒░░  █   ░
 	▒██▄█▓▒ ▒ ░ ▐██▓░░▓█▄   ▌▒██   ██░ ░ █ █ ▒ 
@@ -32,11 +33,11 @@ def logo():
 	░░       ▒ ▒ ░░   ░ ░  ░ ░ ░ ░ ▒   ░    ░  
 	         ░ ░        ░        ░ ░   ░    ░  
 	         ░ ░      ░                        
-	          			{white}Coded by: {green} WtfIsThis
-	          			{white}Version: {green} 0.1''')
+	          			{white}Coded by: {seccolor} WtfIsThis
+	          			{white}Version: {seccolor} 0.1''')
 
 def goback():
-	keyinput = input(f'''\n{ngreen}Write 'b' to go back to the menu and 'q' to exit the program\n{green}[>] ''')
+	keyinput = input(f'''\n{primcolor}Write 'b' to go back to the menu and 'q' to exit the program\n{seccolor}[>] ''')
 	if keyinput == 'b':
 		main()
 	elif keyinput == 'q':
@@ -46,66 +47,72 @@ def goback():
 		clear()
 		sys.exit('Invalid Input, ' + keyinput + " isn't defined" )
 
-def help():
+def Help():
 	logo()
-	print(f'''{ngreen}Help [-h] -\n\n{green}''')
+	print(f'''{primcolor}Help [-h] -\n\n{seccolor}''')
 	goback()
 
-def github():
+def Github():
 	logo()
-	print(f'''{ngreen}Github -\n\n{green}My Github profile: https://github.com/Wtf-Is-This-x1337''')
+	print(f'''{primcolor}Github -\n\n{seccolor}My Github profile: https://github.com/Wtf-Is-This-x1337''')
 	print('Project repository: https://github.com/Wtf-Is-This-x1337/PyDox')
 	print('[!] Code Improvements/Suggestions are welcome\n[!] Open an issue in Github for suggestions/issues')
 	goback()
 
-def credits():
+def Credits():
 	logo()
-	print(f'''{ngreen}Credits -\n\n{green}[+] Creator - WtfIsThis\n-----------------------\nI stole code from:\n[+] Garuda - coder: Cryptonian007\n\tHis github: https://github.com/Cryptonian007\n[+] Sherlock project - coder: Siddharth Dushantha\n\tHis github: https://github.com/sdushantha\n[+] Anonfiles Unofficial Python API - coder: nstrydom2\n\tHis github: https://github.com/nstrydom2''')
+	print(f'''{primcolor}Credits -\n\n{seccolor}[+] Creator - WtfIsThis\n-----------------------\nI stole code from:\n[+] Garuda - coder: Cryptonian007\n\tHis github: https://github.com/Cryptonian007\n[+] Sherlock project - coder: Siddharth Dushantha\n\tHis github: https://github.com/sdushantha\n[+] Anonfiles Unofficial Python API - coder: nstrydom2\n\tHis github: https://github.com/nstrydom2''')
 	goback()
 
-def settings():
+def Style():
 	logo()
-	print(f'''{ngreen}Settings -\n\n{green}''')
+	styleoption = input(f'''{primcolor}Style -\n\n{seccolor}[1] Green | Bright Green (Default)\n[2] Cyan | Blue\n[3] Blue | Magenta\n\n[>] ''')
 	goback()
 
 def SetApi():
 	logo()
-	print(f'''{ngreen}Set API Keys -\n\n{green}''')
+	pastebinkey = input(f'''{primcolor}Set API Keys -\n\n{seccolor}[+] Pastebin API Key: ''')
+	shodankey = input('[+] Shodan API Key: ')
+	ipgeokey = input('[+] Ipgeolocation API Key: ')
+	ApiFile = open("APIs.txt", "w")
+	ApiFile.write(pastebinkey + "\n" + shodankey + "\n" + ipgeokey)
+	ApiFile.close() # close the file when done
+	print('Done! File created at ./APIs.txt')
 	goback()
 
 def AutoDox():
 	logo()
-	print(f'''{ngreen}Informations -\n\n{green}''')
+	print(f'''{primcolor}Informations -\n\n{seccolor}''')
 	goback()
 
 def RealName():
     logo()
-    print(f'''{ngreen}Dox using a real name -\n\n{green}''')
+    print(f'''{primcolor}Dox using a real name -\n\n{seccolor}''')
     goback()
 
-def username():
+def Username():
     logo()
-    print(f'''{ngreen}Dox using a username - \n\n{green}''')
+    print(f'''{primcolor}Dox using a username - \n\n{seccolor}''')
     goback()
 
-def phone():
+def Phone():
     logo()
-    print(f'''{ngreen}Dox using a username - \n\n{green}''')
+    print(f'''{primcolor}Dox using a username - \n\n{seccolor}''')
     goback()
 
-def address():
+def Address():
     logo()
-    print(f'''{ngreen}Dox using an address - \n\n{green}''')
+    print(f'''{primcolor}Dox using an address - \n\n{seccolor}''')
     goback()
 
-def tools():
+def Tools():
     logo()
-    print(f'''{ngreen}Tools - \n\n{green}''')
+    toolsinput = input(f'''{primcolor}Tools - \n\n{seccolor}[1] Sherlock\n[2] OSINT\n[3] ''')
     goback()
 
-def createList():
+def CreateList():
     logo()
-    print(f'''\n{ngreen}Create a list with all the informations - \n{green}''')
+    print(f'''\n{primcolor}Create a list with all the informations - \n{seccolor}''')
     # ! "do u want to delete the last file created"
     listrealname = input('Real name: ')
     listusername = input('Username: ')
@@ -117,40 +124,40 @@ def createList():
     listip = input('IP address: ')
     listother = input('Other informations (separate by comma): ')
     # open list.txt for writing and create it if it doesn't exist 
-    List = open("list.txt", "a+")
+    List = open("list.txt", "w") # or 'a+' for append mode
     List.write("List - \nReal name: " + listrealname + "\nUsername: " + listusername + "\nAge: " + listage + "\nPhone number: " + listphone + "\nCountry: " + listcountry + "\nCity: " + listcity + "\nAddress: " + listaddress + "\nIP Address: " + listip + "\nOther info - \n" + listother)
-    List.close # close the file when done
+    List.close() # close the file when done
     print('Done! File created at ./list.txt')
     # upload
-    print(f'''\n{ngreen}Do you want to upload the file online? [y/n]{green}''')
+    print(f'''\n{primcolor}Do you want to upload the file online? [y/n]{seccolor}''')
     qupload = input('[>] ')
     if qupload == 'y':
-    	option = input(f'''\n{ngreen}Choose an option:\n{green}[1] Pastebin (next update | requires Api Key)\n[2] Anonfiles\n[3] More soon\n\n[>] ''')
+    	option = input(f'''\n{primcolor}Choose an option:\n{seccolor}[1] Pastebin (next update | requires Api Key)\n[2] Anonfiles\n[3] More soon\n\n[>] ''')
     	if option == '2': # upload on anonfiles
     		# upload the file and enable progressbar terminal feedback
     		upload = anon.upload('./list.txt', progressbar=True)
-    		print('List.txt was uploaded at: ' + upload.url.geturl() + "\n")
+    		print('List.txt was uploaded at: ' + upload.url.geturl())
     goback()
 
 def main():
 	logo()
-	select = input(f'''{green}\nSelect:
-	1) {ngreen}Help\t\t{green}2) {ngreen}Github\t  {green}3) {ngreen}Credits\n
-	{green}4) {ngreen}Settings\t{green}5) {ngreen}Set API Keys\t  {green}6) {ngreen}Auto Dox\n
-    {green}\t7) {ngreen}Real Name\t{green}8) {ngreen}Username\t  {green}9) {ngreen}Phone\n
-    {green}\t10) {ngreen}Address\t{green}11) {ngreen}Tools\t {green}12) {ngreen}Create List\n
-                        {green}13) {ngreen}Quit
-	\n{green}Option: ''')
+	select = input(f'''{seccolor}\nSelect:
+	1) {primcolor}Help\t\t{seccolor}2) {primcolor}Github\t  {seccolor}3) {primcolor}Credits\n
+	{seccolor}4) {primcolor}Style\t{seccolor}5) {primcolor}Set API Keys\t  {seccolor}6) {primcolor}Auto Dox\n
+    {seccolor}\t7) {primcolor}Real Name\t{seccolor}8) {primcolor}Username\t  {seccolor}9) {primcolor}Phone\n
+    {seccolor}\t10) {primcolor}Address\t{seccolor}11) {primcolor}Tools\t {seccolor}12) {primcolor}Create List\n
+                        {seccolor}13) {primcolor}Quit
+	\n{seccolor}Option: ''')
 
 	# full spaghetti
 	if select == '1':
-		help()
+		Help()
 	elif select == '2':
-		github()
+		Github()
 	elif select == '3':
-		credits()
+		Credits()
 	elif select == '4':
-		settings()
+		Style()
 	elif select == '5':
 		SetApi()
 	elif select == '6':
@@ -158,15 +165,15 @@ def main():
 	elif select == '7':
 		RealName()
 	elif select == '8':
-		username()
+		Username()
 	elif select == '9':
-		phone()
+		Phone()
 	elif select == '10':
-		address()
+		Address()
 	elif select == '11':
-		tools()
+		Tools()
 	elif select == '12':
-		createList()
+		CreateList()
 	elif select == '13':
 		clear()
 		sys.exit()
