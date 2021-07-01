@@ -46,6 +46,11 @@ user_agents = [
 ]
 
 # Functions
+def file_is_empty(path):
+	try:
+		return os.stat(path).st_size==0
+	except:
+		return True
 
 def googlesearch(query):
     # Objective: Performs a Google search [Top 15 results]
@@ -516,11 +521,23 @@ def CreateList():
     print(f'''\n{primcolor}Do you want to upload the file online? [y/n]{seccolor}''')
     qupload = input('[>] ')
     if qupload == 'y':
-    	option = input(f'''\n{primcolor}Choose an option:\n{seccolor}[1] Pastebin (next update | requires Api Key)\n[2] Anonfiles\n[3] More soon\n\n[>] ''')
-    	if option == '2': # upload on anonfiles
+
+    	option = input(f'''\n{primcolor}Choose an option:\n{seccolor}[1] Anonfiles\n[2] Pastebin (requires Api Key)\n[3] Dropbox (requires Api Key)\n\n[>] ''')
+    	if option == '1': # upload on anonfiles
     		# upload the file and enable progressbar terminal feedback
     		upload = anon.upload('./list.txt', progressbar=True)
     		print('List.txt was uploaded at: ' + upload.url.geturl())
+    	elif option == '2': # upload on Pastebin
+    		if file_is_empty("APIs.txt") == True:
+    			print(f'''{primcolor}[!] You need to change your api keys''')
+    			goback()
+    		else:
+    			print("List.txt was uploaded at: ")
+    	elif option == '3': # upload on Dropbox
+    		if file_is_empty("APIs.txt") == True:
+    			print(f'''{primcolor}[!] You need to change your api keys''')
+    		else:
+    			print("List.txt was uploaded at: ")
     goback()
 
 def main():
