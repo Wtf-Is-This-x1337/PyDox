@@ -1,6 +1,6 @@
 # PyDox v0.1
-![alt text](https://github.com/Wtf-Is-This-x1337/PyDox/blob/main/images/main.png?raw=true)
-A Sophisticated Doxing Tool
+A Sophisticated Doxing Tool         
+![alt text](https://github.com/Wtf-Is-This-x1337/PyDox/blob/main/images/main.png?raw=true)        
 ## Details
 | Name | Details |
 | ------ | ------ |
